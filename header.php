@@ -24,9 +24,8 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="//use.typekit.net/crk4qwh.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<?php wp_head(); ?>
+	<script type="text/javascript" src="//use.typekit.net/xau8goq.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>

@@ -231,7 +231,7 @@ header, footer, nav, section, article, hgroup, figure {
 /* line 1, scss/base/_main.scss */
 body {
   background: #211e21;
-  font: 100%/1.4 "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+  font: 100%/1.4 "museo-slab", "Vitesse", Georgia, Times, "Times New Roman", serif;
   -webkit-text-size-adjust: 100%;
   color: #f5f3e9;
   font-weight: 100;
@@ -302,8 +302,9 @@ a:hover, a:focus {
 /* line 3, scss/base/_headings.scss */
 h1, .alpha {
   line-height: 1.2;
-  font-family: "Turnpike", "Arial", sans-serif;
+  font-family: "nimbus-sans-extended", "Turnpike", "Arial", sans-serif;
   font-weight: normal;
+  text-transform: uppercase;
   font-size: 3.15em;
   color: #d3ccbe;
   letter-spacing: .03em;
@@ -321,10 +322,10 @@ h1, .alpha {
   }
 }
 
-/* line 23, scss/base/_headings.scss */
+/* line 24, scss/base/_headings.scss */
 h2, .beta {
   line-height: 1.2;
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: .08em;
@@ -333,10 +334,10 @@ h2, .beta {
   color: #d3ccbe;
 }
 
-/* line 30, scss/base/_headings.scss */
+/* line 31, scss/base/_headings.scss */
 h3, .gamma {
   line-height: 1.2;
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: .08em;
@@ -345,9 +346,9 @@ h3, .gamma {
   color: #d3ccbe;
 }
 
-/* line 37, scss/base/_headings.scss */
+/* line 38, scss/base/_headings.scss */
 h4, .delta {
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: .08em;
@@ -356,13 +357,13 @@ h4, .delta {
 }
 
 /* Subheadings */
-/* line 51, scss/base/_headings.scss */
+/* line 52, scss/base/_headings.scss */
 .subheading {
-  font-family: "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+  font-family: "museo-slab", "Vitesse", Georgia, Times, "Times New Roman", serif;
   color: #7f6f66;
 }
 
-/* line 55, scss/base/_headings.scss */
+/* line 56, scss/base/_headings.scss */
 h5.subheading {
   font-size: .9em;
   line-height: 1;
@@ -484,7 +485,7 @@ fieldset {
 label {
   display: block;
   padding-bottom: 0.25rem;
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: .08em;
@@ -522,7 +523,7 @@ button, input[type="submit"] {
   border: 0;
   cursor: pointer;
   color: #a54d35;
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: .08em;
@@ -656,7 +657,7 @@ th {
   text-align: left;
   border: 1px solid gray;
   padding: 0.2em;
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: .08em;
@@ -698,7 +699,7 @@ td {
 }
 /* line 28, scss/objects/_layout.scss */
 .g > a {
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: .08em;
@@ -840,7 +841,7 @@ td {
 }
 /* line 71, scss/objects/_nav.scss */
 .nav li ul li a {
-  font-family: "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+  font-family: "museo-slab", "Vitesse", Georgia, Times, "Times New Roman", serif;
   font-size: .9em;
 }
 /* line 76, scss/objects/_nav.scss */
@@ -867,7 +868,7 @@ td {
   margin: 0;
   background: #211e21;
   color: #7f6f66;
-  font-family: "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+  font-family: "museo-slab", "Vitesse", Georgia, Times, "Times New Roman", serif;
   font-size: .8em;
 }
 @media all and (max-width: 550px) {
@@ -895,11 +896,14 @@ td {
 /* line 126, scss/objects/_nav.scss */
 .nav a {
   padding: 0 10px;
-  font-family: "Turnpike", "Arial", sans-serif;
-  font-size: 0.75em;
+  font-family: "nimbus-sans-extended", "Turnpike", "Arial", sans-serif;
+  font-size: 0.85em;
   color: #7f6f66;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .03em;
 }
-/* line 132, scss/objects/_nav.scss */
+/* line 135, scss/objects/_nav.scss */
 .nav a:hover, .nav a:focus {
   color: #f5f3e9;
 }
@@ -909,25 +913,25 @@ td {
     padding: 0 5px;
   }
 }
-/* line 142, scss/objects/_nav.scss */
+/* line 145, scss/objects/_nav.scss */
 .nav.active {
   max-height: 40em;
 }
 
-/* line 149, scss/objects/_nav.scss */
+/* line 152, scss/objects/_nav.scss */
 .pagination {
   overflow: hidden;
 }
-/* line 152, scss/objects/_nav.scss */
+/* line 155, scss/objects/_nav.scss */
 .pagination li {
   float: left;
   border-right: 1px solid #eeeeee;
 }
-/* line 156, scss/objects/_nav.scss */
+/* line 159, scss/objects/_nav.scss */
 .pagination li:last-child {
   border: 0;
 }
-/* line 161, scss/objects/_nav.scss */
+/* line 164, scss/objects/_nav.scss */
 .pagination a {
   padding: 20px;
 }
@@ -1075,12 +1079,12 @@ td {
 /* Global Font Classes */
 /* line 2, scss/objects/_text.scss */
 .font-secondary {
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
 }
 
 /* line 5, scss/objects/_text.scss */
 .font-tertiary {
-  font-family: "Turnpike", "Arial", sans-serif;
+  font-family: "nimbus-sans-extended", "Turnpike", "Arial", sans-serif;
 }
 
 /* line 10, scss/objects/_text.scss */
@@ -1147,7 +1151,7 @@ td {
 
 /* line 67, scss/objects/_text.scss */
 .pullquote {
-  font-family: "Tungsten", "Impact", sans-serif;
+  font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   font-size: 1.4375em;
 }
 

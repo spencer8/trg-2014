@@ -126,8 +126,11 @@
 	a {
 		padding: 0 $padpx-half;
 		font-family: $font-tertiary;
-		font-size:0.75em;
+		font-size:0.85em;
 		color: $med-brwn;
+		font-weight: normal;
+		text-transform: uppercase;
+		letter-spacing:.03em;
 
 		&:hover, &:focus {
 			color: $creme-light;
