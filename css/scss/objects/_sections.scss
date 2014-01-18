@@ -1,0 +1,25 @@
+/* Galleries */
+.gallery {
+	.gi a {
+		width:100%;
+		height:100%;
+		display:block;
+
+		img{
+			-webkit-transition: opacity .3s ease-in-out;
+			-moz-transition: opacity .3s ease-in-out;
+			-o-transition: opacity .3s ease-in-out;
+			transition: opacity .3s ease-in-out;
+		}
+
+		&:hover {
+			background:$med-brwn;
+
+			img {
+				opacity:.5;
+
+			}
+		}
+	}
+}
+

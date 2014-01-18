@@ -1,0 +1,103 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+//Colors
+
+$drk-brwn : #211e21;
+$med-brwn : #7f6f66;
+$creme : #d3ccbe;
+$creme-light : #f5f3e9;
+
+$blue-grey : #abbac4;
+$red : #A54D35;
+
+
+$gray : #808080;
+$gray-light : #f9f9f9;
+$gray-light-2 : #eee;
+$gray-light-3 : #ddd;
+$gray-light-4 : #bbb;
+$gray-med : #666;
+$gray-dark : #333;
+$gray-dark-2 : #131313;
+$white : #fff;
+$black : #000;
+
+$dim : rgba(0,0,0,0.5);
+$dimmer : rgba(0,0,0,0.8);
+
+$error : #f00;
+$valid : #089e00;
+
+$brand-facebook: #03539e;
+$brand-twitter: #35ccff;
+$brand-linkedin: #217bc1;
+
+//Typography
+
+$font : "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+$font-secondary : "Tungsten", "Impact", sans-serif;
+$font-tertiary : "Turnpike", "Arial", sans-serif;
+$font-icons : "Mono Social Icons Font", "Arial", sans-serif;
+
+$font-size-norm : .875em;
+$font-size-slightly-larger : 1.0625em;
+$font-size-slightly-smaller : 0.875em;
+$font-size-sm : 0.8125em;
+$font-size-large : 1.4375em;
+
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('fonts/MonoSocialIconsFont-1.10.eot');
+    src: url('fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+         url('fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
+         url('fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+         url('fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Layout
+$max-width: 600px;
+$offset-left-1: 4.5rem;
+
+$l-sidebar-width: 19.75rem;
+
+//Defaults
+$space : 1rem;
+$space-and-half : $space*1.5;
+$space-double : $space*2;
+$space-triple : $space*3;
+$space-quad : $space*4;
+$space-half : $space/2;
+$space-quarter : $space/4;
+$pad : 1rem;
+$pad-and-half : $pad*1.5;
+$pad-double : $pad*2;
+$pad-half : $pad/2;
+$pad-quarter :$pad/4;
+
+$padpx : 20px;
+$padpx-half : $padpx/2;
+$padpx-and-half : $padpx*1.5;
+$padpx-double : $padpx*2;
+$padpx-dub-half : $padpx*2.5;
+$padpx-triple : $padpx*3;
+$padpx-quad : $padpx*4;
+$padpx-quarter :$padpx/4;
+
+$menu-col-left:28%;
+$menu-col-gutter:2%;
+$menu-col-right:70%;
+$out-gutter: 5%;
+
+
+//Breakpoints
+$bp-small : 375px;
+$bp-med : 430px;
+$bp-large : 550px;
+$bp-full : 640px;
+
+//

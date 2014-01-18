@@ -1,0 +1,60 @@
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+h1, .alpha   { 
+	line-height: 1.2;
+	font-family: $font-tertiary;
+	font-weight: normal;
+	font-size: 3.15em;
+	color: $creme;
+	letter-spacing: .03em;
+	margin: $space*3 0 0 $menu-col-left;
+	padding-left: 1%;
+
+	@media all and (max-width: $bp-small) {
+		width:100%;
+		text-align:center;
+		margin-left:0;
+		padding-left:0;
+		font-size: 2em;
+	}
+
+}
+
+h2, .beta    { 
+	line-height: 1.2;
+	@include font-2-style();
+	font-size: 1.5em;
+	color: $creme;
+}
+
+h3, .gamma   { 
+	line-height: 1.2;
+	@include font-2-style();
+	font-size: 1.25em;
+	color: $creme;
+}
+
+h4, .delta   {
+	@include font-2-style();
+	font-size: 1.125em;
+}
+
+h5, .epsilon { 
+	
+}
+
+h6, .zeta    { 
+	
+}
+
+/* Subheadings */
+.subheading {
+	font-family: $font;
+	color: $med-brwn;
+}
+h5.subheading {
+	font-size: .9em;
+	line-height: 1;
+	margin-top: 0.2em;
+	font-weight: 100;
+}

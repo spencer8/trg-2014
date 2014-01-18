@@ -1,0 +1,14 @@
+/*------------------------------------*\
+    $MAIN CONTENT AREA
+\*------------------------------------*/
+[role=main] {
+	overflow: hidden;
+	padding: 0 30px;
+	margin: 0 auto;
+
+
+	@media all and (max-width: $bp-large) {
+		padding: 0;
+	}
+
+}

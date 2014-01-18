@@ -1,0 +1,1408 @@
+/*                                                                                                                                         
+                                                ,,            ,,                          ,,                                             
+ .M"""bgd mm                                    db          `7MM        mm         mm   `7MM                                    OO OO OO 
+,MI    "Y MM                                                  MM        MM         MM     MM                                    88 88 88 
+`MMb.   mmMMmm ,pW"Wq.`7MMpdMAo.     `7Mb,od8 `7MM  .P"Ybmmm  MMpMMMb.mmMMmm     mmMMmm   MMpMMMb.  .gP"Ya `7Mb,od8 .gP"Ya      || || || 
+  `YMMNq. MM  6W'   `Wb MM   `Wb       MM' "'   MM :MI  I8    MM    MM  MM         MM     MM    MM ,M'   Yb  MM' "',M'   Yb     || || || 
+.     `MM MM  8M     M8 MM    M8       MM       MM  WmmmP"    MM    MM  MM         MM     MM    MM 8M""""""  MM    8M""""""     `' `' `' 
+Mb     dM MM  YA.   ,A9 MM   ,AP       MM       MM 8M         MM    MM  MM         MM     MM    MM YM.    ,  MM    YM.    ,     ,, ,, ,, 
+P"Ybmmd"  `Mbmo`Ybmd9'  MMbmmd'      .JMML.   .JMML.YMMMMMb .JMML  JMML.`Mbmo      `Mbmo.JMML  JMML.`Mbmmd'.JMML.   `Mbmmd'     db db db 
+                        MM                         6'     dP                                                                             
+                      .JMML.                       Ybmmmd'                                                                               
+
+Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
+You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
+So please don't use these styles. They're just here to put together the demo, and nothing more.
+They're intentionally gray, boring, and crappy because you're supposed to do this stuff yourself.
+
+Atomic design is philosophically complimentary with these CSS approaches:
+
+* SMACSS by Jonathan Snook http://smacss.com/
+* OOCSS by Nicole Sullivan http://oocss.org/
+* BEM CSS Methology : http://bem.info/method/
+* CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
+
+So feel free to use any of these approaches. Or don't. It's totally up to you.
+
+*/
+/*------------------------------------*\
+    $TABLE OF CONTENTS 
+    based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
+\*------------------------------------*/
+/**
+ * VARIABLES..............................Declarations of Sass variables 
+ * .....Colors
+ * .....Typography
+ * .....Layout
+ * .....Defaults
+ * .....Breakpoints
+ * MIXINS.................................Sass mixins 
+ * RESET..................................Set reset defaults
+ * GLOBAL CLASSES.........................Set reset defaults
+ * GLOBAL ELEMENTS........................Establish global styles
+ * .....Main
+ * .....Headings
+ * .....Text-related elements (p, blockquote, lists)
+ * .....Defaults
+ * .....Breakpoints
+ * TYPOGRAPHY------------------------------
+ * MEDIA------------------------------
+ * LAYOUT------------------------------
+ * NAVIGATION------------------------------
+ * TOC To Be Continued
+ */
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+@font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url("fonts/MonoSocialIconsFont-1.10.eot");
+  src: url("fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
+  src: url("fonts/MonoSocialIconsFont-1.10.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+ */
+/* Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
+	Usage: @include font-size(1, large);
+*/
+/* Franklin Small font style
+	Usage: @include font-2-style();
+ */
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* line 6, scss/generic/_reset.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 11, scss/generic/_reset.scss */
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, scss/generic/_reset.scss */
+header, footer, nav, section, article, hgroup, figure {
+  display: block;
+}
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+/*------------------------------------*\
+    $GLOBAL CLASSES
+\*------------------------------------*/
+/* Clearfix */
+/* line 6, scss/base/_global-classes.scss */
+.cf, .g-3up, .wrap {
+  *zoom: 1;
+}
+
+/* line 10, scss/base/_global-classes.scss */
+.cf:before, .g-3up:before, .cf:after, .g-3up:after,
+.wrap:before, .wrap:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 15, scss/base/_global-classes.scss */
+.cf:after, .g-3up:after, .wrap:after {
+  clear: both;
+}
+
+/* line 19, scss/base/_global-classes.scss */
+.wrap {
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+@media all and (max-width: 640px) {
+  /* line 19, scss/base/_global-classes.scss */
+  .wrap {
+    width: 90%;
+  }
+}
+
+/* Completely remove from the flow and screen readers. */
+/* line 30, scss/base/_global-classes.scss */
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Completely remove from the flow but leave available to screen readers. */
+/* line 36, scss/base/_global-classes.scss */
+.is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Floats */
+/* line 47, scss/base/_global-classes.scss */
+.right {
+  float: right;
+  padding: 0 0 1rem 1rem;
+}
+
+/* line 52, scss/base/_global-classes.scss */
+.right-search {
+  float: right;
+  padding: 0 0 1rem 0;
+}
+
+/* line 57, scss/base/_global-classes.scss */
+.left {
+  float: left;
+  padding: 0 1rem 1rem 0;
+}
+
+/* line 62, scss/base/_global-classes.scss */
+.bott {
+  clear: both;
+  padding: 1rem 0;
+}
+
+/* Text-Align */
+/* line 67, scss/base/_global-classes.scss */
+.align-right {
+  text-align: right;
+}
+
+/* line 71, scss/base/_global-classes.scss */
+.align-center {
+  text-align: center;
+}
+
+/* line 75, scss/base/_global-classes.scss */
+.align-left {
+  text-align: left;
+}
+
+/* Display Classes */
+@media all and (max-width: 430px) {
+  /* line 80, scss/base/_global-classes.scss */
+  .hide-small {
+    display: none;
+  }
+}
+
+@media all and (min-width: 430px) and (max-width: 550px) {
+  /* line 86, scss/base/_global-classes.scss */
+  .hide-med {
+    display: none;
+  }
+}
+
+@media all and (min-width: 550px) {
+  /* line 92, scss/base/_global-classes.scss */
+  .hide-large {
+    display: none;
+  }
+}
+
+/* line 99, scss/base/_global-classes.scss */
+.valid {
+  color: #089e00;
+}
+
+/* line 103, scss/base/_global-classes.scss */
+.error {
+  color: red;
+}
+
+/* line 1, scss/base/_main.scss */
+body {
+  background: #211e21;
+  font: 100%/1.4 "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+  -webkit-text-size-adjust: 100%;
+  color: #f5f3e9;
+  font-weight: 100;
+}
+
+/* Links */
+/* line 2, scss/base/_links.scss */
+a {
+  color: #abbac4;
+  text-decoration: none;
+  outline: 0;
+}
+/* line 7, scss/base/_links.scss */
+a.readmore {
+  color: #7f6f66;
+}
+/* line 11, scss/base/_links.scss */
+a:hover, a:focus {
+  color: #a54d35;
+}
+
+/* line 16, scss/base/_links.scss */
+.nav-social a {
+  width: 32px;
+  display: inline-block;
+  color: #7f6f66;
+  overflow: hidden;
+}
+
+/* line 25, scss/base/_links.scss */
+.nav-social a,
+.nav-social a:before {
+  font-family: "Mono Social Icons Font", "Arial", sans-serif;
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+/* line 39, scss/base/_links.scss */
+.footer .nav-social a:hover, .nav-social a:focus, .footer
+.nav-social a:before:hover,
+.nav-social a:before:focus {
+  color: #a54d35;
+}
+
+/* line 44, scss/base/_links.scss */
+.nav-social a:before {
+  content: attr(title);
+  margin-right: 1em;
+  font-size: 38px;
+  line-height: 1;
+}
+
+/* line 52, scss/base/_links.scss */
+.nav-social li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+/* line 3, scss/base/_headings.scss */
+h1, .alpha {
+  line-height: 1.2;
+  font-family: "Turnpike", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 3.15em;
+  color: #d3ccbe;
+  letter-spacing: .03em;
+  margin: 3rem 0 0 28%;
+  padding-left: 1%;
+}
+@media all and (max-width: 375px) {
+  /* line 3, scss/base/_headings.scss */
+  h1, .alpha {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 2em;
+  }
+}
+
+/* line 23, scss/base/_headings.scss */
+h2, .beta {
+  line-height: 1.2;
+  font-family: "Tungsten", "Impact", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: .08em;
+  color: #d3ccbe;
+  font-size: 1.5em;
+  color: #d3ccbe;
+}
+
+/* line 30, scss/base/_headings.scss */
+h3, .gamma {
+  line-height: 1.2;
+  font-family: "Tungsten", "Impact", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: .08em;
+  color: #d3ccbe;
+  font-size: 1.25em;
+  color: #d3ccbe;
+}
+
+/* line 37, scss/base/_headings.scss */
+h4, .delta {
+  font-family: "Tungsten", "Impact", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: .08em;
+  color: #d3ccbe;
+  font-size: 1.125em;
+}
+
+/* Subheadings */
+/* line 51, scss/base/_headings.scss */
+.subheading {
+  font-family: "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+  color: #7f6f66;
+}
+
+/* line 55, scss/base/_headings.scss */
+h5.subheading {
+  font-size: .9em;
+  line-height: 1;
+  margin-top: 0.2em;
+  font-weight: 100;
+}
+
+/* Text-Related Elements */
+/* line 2, scss/base/_text.scss */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Blockquote */
+/* line 7, scss/base/_text.scss */
+blockquote {
+  font-style: italic;
+  border-left: 1px solid #7f6f66;
+  color: #d3ccbe;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Horizontal Rule */
+/* line 16, scss/base/_text.scss */
+hr {
+  border: 0;
+  height: 1px;
+  background: #7f6f66;
+  margin: 2rem 0;
+}
+
+/* line 23, scss/base/_text.scss */
+abbr {
+  border-bottom: 1px dotted #7f6f66;
+  cursor: help;
+}
+
+/* line 27, scss/base/_text.scss */
+strong {
+  font-weight: 500;
+}
+
+/* line 1, scss/base/_lists.scss */
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Definition Lists */
+/* line 8, scss/base/_lists.scss */
+dl {
+  overflow: hidden;
+  margin: 0 0 1rem;
+}
+
+/* line 13, scss/base/_lists.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 17, scss/base/_lists.scss */
+dd {
+  margin-left: 0;
+}
+
+/*------------------------------------*\
+    $MEDIA ELEMENTS
+\*------------------------------------*/
+/* Flexible Media */
+/* line 6, scss/base/_media.scss */
+img, video, object {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 11, scss/base/_media.scss */
+iframe {
+  margin-bottom: 1rem;
+}
+
+/* line 15, scss/base/_media.scss */
+figure {
+  margin-bottom: 1rem;
+}
+/* line 17, scss/base/_media.scss */
+figure img {
+  margin-bottom: 0.25rem;
+}
+
+/* line 21, scss/base/_media.scss */
+figcaption {
+  font-style: italic;
+}
+
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+/* line 5, scss/base/_forms.scss */
+form > div {
+  margin-bottom: 1rem;
+}
+
+/* line 9, scss/base/_forms.scss */
+form ol, form ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+/* line 14, scss/base/_forms.scss */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 20, scss/base/_forms.scss */
+label {
+  display: block;
+  padding-bottom: 0.25rem;
+  font-family: "Tungsten", "Impact", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: .08em;
+  color: #d3ccbe;
+  font-size: 0.8125em;
+  color: #abbac4;
+}
+
+/* line 28, scss/base/_forms.scss */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+/* line 34, scss/base/_forms.scss */
+input, textarea {
+  border: 0;
+  padding: 5px;
+  background: #f5f3e9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 43, scss/base/_forms.scss */
+input[type=text], input[type=search], input[type=url], input[type=number], textarea {
+  -webkit-appearance: none;
+}
+
+/* line 47, scss/base/_forms.scss */
+button, input[type="submit"] {
+  padding: 0.65rem;
+  background: #abbac4;
+  border: 0;
+  cursor: pointer;
+  color: #a54d35;
+  font-family: "Tungsten", "Impact", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: .08em;
+  color: #d3ccbe;
+}
+
+/* line 57, scss/base/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: 0.3em;
+}
+
+/* line 62, scss/base/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/* line 68, scss/base/_forms.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 73, scss/base/_forms.scss */
+.field-container {
+  margin-bottom: 1rem;
+}
+
+/* line 77, scss/base/_forms.scss */
+.inline-form {
+  margin-top: 1rem;
+}
+/* line 81, scss/base/_forms.scss */
+.inline-form fieldset, .inline-form .inline-container {
+  position: relative;
+}
+/* line 85, scss/base/_forms.scss */
+.inline-form input {
+  height: 30px;
+  vertical-align: bottom;
+  width: 65%;
+  margin-right: 2%;
+  padding-left: 1em;
+  float: left;
+}
+/* line 94, scss/base/_forms.scss */
+.inline-form input[type=submit], .inline-form button, .inline-form .btn {
+  padding: 5px;
+  background: #7f6f66;
+  width: auto;
+  height: 30px;
+  vertical-align: bottom;
+  color: #211e21;
+  width: 30%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 106, scss/base/_forms.scss */
+.inline-form input[type=submit]:hover, .inline-form input[type=submit]:focus, .inline-form button:hover, .inline-form button:focus, .inline-form .btn:hover, .inline-form .btn:focus {
+  background: #a54d35;
+}
+
+/* line 113, scss/base/_forms.scss */
+.inline-search-results-form {
+  width: 100%;
+}
+@media all and (min-width: 430px) {
+  /* line 113, scss/base/_forms.scss */
+  .inline-search-results-form {
+    width: 82%;
+  }
+}
+/* line 120, scss/base/_forms.scss */
+.inline-search-results-form fieldset, .inline-search-results-form .inline-container {
+  position: relative;
+}
+/* line 124, scss/base/_forms.scss */
+.inline-search-results-form input[type=submit], .inline-search-results-form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: auto;
+}
+
+/* Validation */
+/* line 134, scss/base/_forms.scss */
+.has-error {
+  border-color: red;
+}
+
+/* line 137, scss/base/_forms.scss */
+.is-valid {
+  border-color: #089e00;
+}
+
+/*------------------------------------*\
+    $SPECIFIC FORMS
+\*------------------------------------*/
+/* Search Form */
+/* line 149, scss/base/_forms.scss */
+.search-field {
+  padding-right: 3em;
+}
+
+/* line 152, scss/base/_forms.scss */
+.inline-form .search-submit {
+  background: none;
+  padding: 0.78em 1em;
+  border: 0;
+  border-left: 1px solid gray;
+  color: gray;
+}
+
+/*------------------------------------*\
+    $Table
+\*------------------------------------*/
+/* line 4, scss/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0;
+  width: 100%;
+}
+
+/* line 10, scss/base/_tables.scss */
+th {
+  text-align: left;
+  border: 1px solid gray;
+  padding: 0.2em;
+  font-family: "Tungsten", "Impact", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: .08em;
+  color: #d3ccbe;
+  font-size: 0.75em;
+}
+
+/* line 17, scss/base/_tables.scss */
+td {
+  border: 0;
+  padding: 0.5em;
+}
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/* Layout Container */
+/* line 6, scss/objects/_layout.scss */
+.lc {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/* Grid Container */
+/* line 18, scss/objects/_layout.scss */
+.g {
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 0;
+  overflow: visible;
+  position: relative;
+}
+/* line 28, scss/objects/_layout.scss */
+.g > a {
+  font-family: "Tungsten", "Impact", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: .08em;
+  color: #d3ccbe;
+  font-size: 0.8125em;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Grid Item */
+/* line 39, scss/objects/_layout.scss */
+.gi {
+  padding: 0;
+  margin: 0 1% 2%;
+  position: relative;
+  float: left;
+}
+/* line 45, scss/objects/_layout.scss */
+.gi img {
+  display: block;
+}
+
+/* Grid 3up */
+/* line 55, scss/objects/_layout.scss */
+.g-3up > .gi {
+  width: 31.3333%;
+}
+/* line 56, scss/objects/_layout.scss */
+.g-3up > .gi img, .g-3up > .gi a {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+@media all and (min-width: 430px) {
+  /* line 65, scss/objects/_layout.scss */
+  .g-3up > .gi:nth-of-type(2n+1) {
+    clear: none;
+  }
+  /* line 69, scss/objects/_layout.scss */
+  .g-3up > .gi:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+@media all and (max-width: 430px) {
+  /* line 55, scss/objects/_layout.scss */
+  .g-3up > .gi {
+    width: 47%;
+    margin: 0 1.5% 3%;
+  }
+  /* line 79, scss/objects/_layout.scss */
+  .g-3up > .gi:nth-of-type(odd) {
+    clear: left;
+  }
+}
+
+/*------------------------------------*\
+    $PAGE STRUCTURE
+\*------------------------------------*/
+/* line 1, scss/objects/_header.scss */
+.header {
+  padding: 7px 0;
+}
+
+/* line 5, scss/objects/_header.scss */
+.logolink {
+  margin: 1rem auto;
+  text-align: center;
+  display: block;
+}
+
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+/* line 5, scss/objects/_nav.scss */
+.nav {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+/* line 11, scss/objects/_nav.scss */
+.nav:before {
+  background: #7f6f66;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: .7em;
+  left: 0;
+  content: '';
+  z-index: -1;
+}
+@media all and (max-width: 375px) {
+  /* line 5, scss/objects/_nav.scss */
+  .nav {
+    border-bottom: 1px solid #7f6f66;
+    padding-bottom: 1rem;
+  }
+}
+/* line 28, scss/objects/_nav.scss */
+.nav ul {
+  z-index: 10;
+  position: relative;
+}
+/* line 34, scss/objects/_nav.scss */
+.nav li {
+  display: inline-block;
+  background: #211e21;
+  z-index: 10;
+  margin-right: -.25em;
+}
+/* line 40, scss/objects/_nav.scss */
+.nav li a {
+  display: inline-block;
+  height: 30px;
+}
+/* line 46, scss/objects/_nav.scss */
+.nav li.current-menu-item > a, .nav li.current-menu-ancestor > a {
+  color: #d3ccbe;
+}
+/* line 50, scss/objects/_nav.scss */
+.nav li:last-child {
+  margin: 0;
+}
+/* line 57, scss/objects/_nav.scss */
+.nav li ul {
+  position: absolute;
+  top: 23px;
+  display: none;
+  text-align: center;
+  padding-top: 5px;
+}
+/* line 64, scss/objects/_nav.scss */
+.nav li ul li {
+  display: block;
+  height: 25px;
+  background: none;
+  margin: 0;
+}
+/* line 71, scss/objects/_nav.scss */
+.nav li ul li a {
+  font-family: "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+  font-size: .9em;
+}
+/* line 76, scss/objects/_nav.scss */
+.nav li ul li:after {
+  content: '';
+  display: none;
+}
+@media all and (max-width: 375px) {
+  /* line 57, scss/objects/_nav.scss */
+  .nav li ul {
+    position: relative;
+    top: -9px;
+    display: block;
+  }
+}
+/* line 91, scss/objects/_nav.scss */
+.nav li:hover ul {
+  display: block;
+}
+/* line 95, scss/objects/_nav.scss */
+.nav li:after {
+  content: '\2022';
+  padding: 0 10px;
+  margin: 0;
+  background: #211e21;
+  color: #7f6f66;
+  font-family: "Vitesse", "Museo Slab", Georgia, Times, "Times New Roman", serif;
+  font-size: .8em;
+}
+@media all and (max-width: 550px) {
+  /* line 95, scss/objects/_nav.scss */
+  .nav li:after {
+    padding: 0 5px;
+  }
+}
+/* line 110, scss/objects/_nav.scss */
+.nav li:last-child:after {
+  content: '';
+  display: none;
+}
+@media all and (max-width: 375px) {
+  /* line 34, scss/objects/_nav.scss */
+  .nav li {
+    display: block;
+    margin: 0 0 0.5rem;
+  }
+  /* line 119, scss/objects/_nav.scss */
+  .nav li:after {
+    display: none;
+  }
+}
+/* line 126, scss/objects/_nav.scss */
+.nav a {
+  padding: 0 10px;
+  font-family: "Turnpike", "Arial", sans-serif;
+  font-size: 0.75em;
+  color: #7f6f66;
+}
+/* line 132, scss/objects/_nav.scss */
+.nav a:hover, .nav a:focus {
+  color: #f5f3e9;
+}
+@media all and (max-width: 550px) {
+  /* line 126, scss/objects/_nav.scss */
+  .nav a {
+    padding: 0 5px;
+  }
+}
+/* line 142, scss/objects/_nav.scss */
+.nav.active {
+  max-height: 40em;
+}
+
+/* line 149, scss/objects/_nav.scss */
+.pagination {
+  overflow: hidden;
+}
+/* line 152, scss/objects/_nav.scss */
+.pagination li {
+  float: left;
+  border-right: 1px solid #eeeeee;
+}
+/* line 156, scss/objects/_nav.scss */
+.pagination li:last-child {
+  border: 0;
+}
+/* line 161, scss/objects/_nav.scss */
+.pagination a {
+  padding: 20px;
+}
+
+/*------------------------------------*\
+    $MAIN CONTENT AREA
+\*------------------------------------*/
+/* line 4, scss/objects/_main.scss */
+[role=main] {
+  overflow: hidden;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+@media all and (max-width: 550px) {
+  /* line 4, scss/objects/_main.scss */
+  [role=main] {
+    padding: 0;
+  }
+}
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+/* line 4, scss/objects/_footer.scss */
+.footer {
+  clear: both;
+  overflow: hidden;
+  color: #7f6f66;
+  line-height: 1.5;
+  text-align: center;
+  margin: 2rem auto;
+  width: 600px;
+}
+@media all and (max-width: 640px) {
+  /* line 4, scss/objects/_footer.scss */
+  .footer {
+    width: 90%;
+  }
+}
+/* line 17, scss/objects/_footer.scss */
+.footer .wrap {
+  font-size: .875em;
+  padding: 0 5%;
+}
+@media all and (max-width: 640px) {
+  /* line 17, scss/objects/_footer.scss */
+  .footer .wrap {
+    padding: 0;
+    width: 100%;
+  }
+}
+/* line 29, scss/objects/_footer.scss */
+.footer .lc {
+  padding: 1rem 1rem 0;
+}
+/* line 33, scss/objects/_footer.scss */
+.footer h2 {
+  color: #7f6f66;
+}
+/* line 38, scss/objects/_footer.scss */
+.footer h2.ghead {
+  text-align: center;
+}
+/* line 41, scss/objects/_footer.scss */
+.footer h2.ghead span {
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 45, scss/objects/_footer.scss */
+.footer h2.ghead span:before {
+  left: -10px;
+  padding: 0 10px;
+}
+@media all and (max-width: 375px) {
+  /* line 38, scss/objects/_footer.scss */
+  .footer h2.ghead {
+    border-bottom: 1px solid #7f6f66;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+  /* line 59, scss/objects/_footer.scss */
+  .footer h2.ghead span:before {
+    display: none;
+  }
+  /* line 65, scss/objects/_footer.scss */
+  .footer h2.ghead:before {
+    display: none;
+  }
+}
+/* line 75, scss/objects/_footer.scss */
+.footer a {
+  color: #7f6f66;
+}
+/* line 77, scss/objects/_footer.scss */
+.footer a:hover {
+  color: #d3ccbe;
+}
+/* line 82, scss/objects/_footer.scss */
+.footer .left {
+  padding: 0;
+  margin: 2rem 0 1rem;
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+@media all and (max-width: 550px) {
+  /* line 82, scss/objects/_footer.scss */
+  .footer .left {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+}
+/* line 95, scss/objects/_footer.scss */
+.footer .right {
+  padding: 0;
+  margin: 2rem 0 1rem;
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+@media all and (max-width: 550px) {
+  /* line 95, scss/objects/_footer.scss */
+  .footer .right {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+}
+/* line 109, scss/objects/_footer.scss */
+.footer .nav-social {
+  padding: 0;
+}
+/* line 113, scss/objects/_footer.scss */
+.footer .copyright {
+  clear: both;
+  padding: 0;
+  font-size: 0.8125em;
+  margin: 0 0 2rem;
+}
+
+/*------------------------------------*\
+    $TEXT Styles
+\*------------------------------------*/
+/* Global Font Classes */
+/* line 2, scss/objects/_text.scss */
+.font-secondary {
+  font-family: "Tungsten", "Impact", sans-serif;
+}
+
+/* line 5, scss/objects/_text.scss */
+.font-tertiary {
+  font-family: "Turnpike", "Arial", sans-serif;
+}
+
+/* line 10, scss/objects/_text.scss */
+.ghead {
+  position: relative;
+  line-height: 1;
+  height: 25px;
+}
+@media all and (max-width: 375px) {
+  /* line 10, scss/objects/_text.scss */
+  .ghead {
+    text-align: center;
+  }
+}
+/* line 18, scss/objects/_text.scss */
+.ghead:before {
+  background: #7f6f66;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: .4em;
+  left: 0;
+  content: '';
+}
+/* line 28, scss/objects/_text.scss */
+.ghead span {
+  position: relative;
+  z-index: 1;
+  margin-left: 28%;
+  padding-left: 2%;
+}
+@media all and (max-width: 375px) {
+  /* line 28, scss/objects/_text.scss */
+  .ghead span {
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+/* line 39, scss/objects/_text.scss */
+.ghead span:before {
+  background: #211e21;
+  height: 25px;
+  width: 100%;
+  padding: 0 8px 0 0;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+@media all and (max-width: 375px) {
+  /* line 39, scss/objects/_text.scss */
+  .ghead span:before {
+    left: -10px;
+    padding: 0 10px;
+  }
+}
+
+/* line 60, scss/objects/_text.scss */
+.intro {
+  font-size: 1.125em;
+  color: #f5f3e9;
+  margin: 4rem 0;
+}
+
+/* line 67, scss/objects/_text.scss */
+.pullquote {
+  font-family: "Tungsten", "Impact", sans-serif;
+  font-size: 1.4375em;
+}
+
+/* line 73, scss/objects/_text.scss */
+.text {
+  padding: 20px;
+}
+@media all and (min-width: 375px) {
+  /* line 73, scss/objects/_text.scss */
+  .text {
+    padding: 40px;
+  }
+}
+@media all and (min-width: 550px) {
+  /* line 73, scss/objects/_text.scss */
+  .text {
+    padding: 9% 10% 7%;
+  }
+}
+/* line 84, scss/objects/_text.scss */
+.text a {
+  text-decoration: none;
+  color: #abbac4;
+}
+/* line 88, scss/objects/_text.scss */
+.text a:hover, .text a:focus {
+  color: #a54d35;
+}
+/* line 93, scss/objects/_text.scss */
+.text ul {
+  list-style: disc;
+  margin: 0 0 1rem 1.2em;
+}
+/* line 97, scss/objects/_text.scss */
+.text ul ul {
+  margin-bottom: 0;
+}
+/* line 102, scss/objects/_text.scss */
+.text ol {
+  list-style: decimal;
+  margin: 0 0 1rem 1.2em;
+}
+/* line 106, scss/objects/_text.scss */
+.text ol ol {
+  margin-bottom: 0;
+}
+
+/* line 112, scss/objects/_text.scss */
+.fineprint {
+  font-size: 0.8125em;
+  color: #7f6f66;
+  margin-left: 28%;
+  padding-left: 2%;
+}
+@media all and (max-width: 375px) {
+  /* line 112, scss/objects/_text.scss */
+  .fineprint {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+/* Review Grade Tile */
+/* line 125, scss/objects/_text.scss */
+.grade {
+  display: block;
+  font-weight: bold;
+  background: gray;
+  color: white;
+  min-height: 4.5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+/* Eyebrow */
+/* line 136, scss/objects/_text.scss */
+.eyebrow {
+  background: #333333;
+  color: white;
+  padding: 0.2em;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+/* line 144, scss/objects/_text.scss */
+.eyebrow-image {
+  position: relative;
+}
+/* line 147, scss/objects/_text.scss */
+.eyebrow-image img {
+  position: relative;
+  z-index: 0;
+}
+/* line 152, scss/objects/_text.scss */
+.eyebrow-image .eyebrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/
+/* line 1, scss/objects/_blocks.scss */
+.menu-section {
+  margin: 20px 0;
+}
+/* line 5, scss/objects/_blocks.scss */
+.menu-section section {
+  clear: both;
+}
+/* line 11, scss/objects/_blocks.scss */
+.menu-section .menu-item {
+  margin-bottom: 20px;
+}
+/* line 15, scss/objects/_blocks.scss */
+.menu-section .item-title {
+  width: 28%;
+  float: left;
+  margin: 0 2% 0 0;
+  text-align: right;
+}
+/* line 21, scss/objects/_blocks.scss */
+.menu-section .item-title h3 {
+  line-height: 20px;
+  margin: 0;
+}
+/* line 26, scss/objects/_blocks.scss */
+.menu-section .item-title h5.subheading {
+  line-height: 20px;
+  color: #d3ccbe;
+  margin: 0;
+}
+@media all and (max-width: 375px) {
+  /* line 15, scss/objects/_blocks.scss */
+  .menu-section .item-title {
+    width: 100%;
+    text-align: left;
+    float: none;
+  }
+  /* line 38, scss/objects/_blocks.scss */
+  .menu-section .item-title h3 {
+    float: left;
+  }
+  /* line 42, scss/objects/_blocks.scss */
+  .menu-section .item-title h5.subheading {
+    float: right;
+  }
+}
+/* line 50, scss/objects/_blocks.scss */
+.menu-section .item-desc {
+  float: left;
+  width: 70%;
+  margin-top: .4em;
+  font-size: 0.875em;
+  line-height: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+@media all and (max-width: 375px) {
+  /* line 50, scss/objects/_blocks.scss */
+  .menu-section .item-desc {
+    clear: both;
+    width: 100%;
+    text-align: left;
+    float: none;
+  }
+}
+
+/* line 2, scss/objects/_lists.scss */
+.inline-list li {
+  display: inline-block;
+}
+
+/* line 1, scss/objects/_tabs.scss */
+.tabs {
+  overflow: hidden;
+}
+/* line 4, scss/objects/_tabs.scss */
+.tabs ul {
+  display: table;
+  width: 100%;
+}
+/* line 9, scss/objects/_tabs.scss */
+.tabs li {
+  display: table-cell;
+  text-align: center;
+  border-right: 1px solid #7f6f66;
+}
+/* line 14, scss/objects/_tabs.scss */
+.tabs li:last-child {
+  border-right: 0;
+}
+/* line 19, scss/objects/_tabs.scss */
+.tabs a {
+  display: block;
+  padding: 0.5rem;
+  background: gray;
+}
+/* line 24, scss/objects/_tabs.scss */
+.tabs a:hover, .tabs a:focus {
+  background: #7f6f66;
+}
+/* line 28, scss/objects/_tabs.scss */
+.tabs a.active {
+  background: #333333;
+  color: white;
+}
+
+/* Galleries */
+/* line 3, scss/objects/_sections.scss */
+.gallery .gi a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* line 8, scss/objects/_sections.scss */
+.gallery .gi a img {
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+/* line 15, scss/objects/_sections.scss */
+.gallery .gi a:hover {
+  background: #7f6f66;
+}
+/* line 18, scss/objects/_sections.scss */
+.gallery .gi a:hover img {
+  opacity: .5;
+}
+
+/* line 2, scss/objects/_article.scss */
+.menu-group {
+  margin: 4rem 0;
+}
+/* line 5, scss/objects/_article.scss */
+.menu-group .intro {
+  font-size: 0.875em;
+  color: #7f6f66;
+  margin: 20px 0 20px 28%;
+  padding-left: 2%;
+}
+@media all and (max-width: 375px) {
+  /* line 5, scss/objects/_article.scss */
+  .menu-group .intro {
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+/* Wordpress Caption */
+/* line 22, scss/objects/_article.scss */
+.wp-caption-text {
+  font-style: italic;
+}

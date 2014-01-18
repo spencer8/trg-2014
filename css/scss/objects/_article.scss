@@ -1,0 +1,24 @@
+//Article
+.menu-group {
+	margin: $space*4 0;
+
+	.intro{
+		font-size:$font-size-norm;
+		color:$med-brwn;
+		margin:$padpx 0 $padpx $menu-col-left;
+		padding-left:$menu-col-gutter;
+
+		@media all and (max-width: $bp-small) {
+
+			margin-left:0;
+			padding-left:0;
+
+		}
+
+	}
+}
+
+/* Wordpress Caption */
+.wp-caption-text {
+	font-style: italic;
+}
