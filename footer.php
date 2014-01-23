@@ -24,9 +24,15 @@ if ( $the_query->have_posts() ) {
 		<div class="left">
 			<?php if(get_field('social')): ?>
 			<ul class="nav-social">
-				<?php while(has_sub_field("social")): ?>
+				<?php while(has_sub_field("social")): 
+
+					$field = get_sub_field_object('icon');
+					$value = get_sub_field('icon');
+					$label = $field['choices'][ $value ];
+
+				?>
 					
-					<li><a href='<?php the_sub_field('link'); ?>' class='symbol' title="circle<?php the_sub_field('icon'); ?>"><?php the_sub_field('text'); ?></a></li>
+					<li><a href='<?php the_sub_field('link'); ?>' class='symbol' title="&#xe<?php echo $value; ?>;"><?php echo $label; ?></a></li>
 
 				<?php endwhile; ?>
 			</ul>

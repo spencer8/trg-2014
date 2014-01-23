@@ -15,7 +15,8 @@ a {
 
 .nav-social a {
 
-	width: 32px;
+	width: 38px;
+	height: 38px;
 	display: inline-block;
 	color: $med-brwn;
 	overflow:hidden;
@@ -43,7 +44,7 @@ a {
 
 .nav-social a:before {
     content: attr(title);
-    margin-right: 1em;
+    margin: 0 1em 1em 0;
 	font-size:38px;
 	line-height:1;
 

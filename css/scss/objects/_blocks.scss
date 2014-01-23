@@ -68,3 +68,20 @@
 	}
 
 }
+#lightbox {
+	
+	#outerImageContainer, 
+	#imageDataContainer {
+		background: $drk-brwn-2;
+	}
+
+	#jqlb_closelabel {
+		background-image:none;
+		text-align:right;
+
+		&:after {
+			content:"X";
+			font-size: 1.4em;
+		}
+	}
+}
