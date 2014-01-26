@@ -310,7 +310,7 @@ h1, .alpha {
   color: #d3ccbe;
   letter-spacing: .03em;
   margin: 3rem 0 0 28%;
-  padding-left: 1%;
+  padding-left: 1.45%;
 }
 @media all and (max-width: 375px) {
   /* line 3, scss/base/_headings.scss */
@@ -811,21 +811,22 @@ td {
   background: #211e21;
   z-index: 10;
   margin-right: -.25em;
+  position: relative;
 }
-/* line 40, scss/objects/_nav.scss */
+/* line 41, scss/objects/_nav.scss */
 .nav li a {
   display: inline-block;
   height: 30px;
 }
-/* line 46, scss/objects/_nav.scss */
+/* line 47, scss/objects/_nav.scss */
 .nav li.current-menu-item > a, .nav li.current-menu-ancestor > a {
   color: #d3ccbe;
 }
-/* line 50, scss/objects/_nav.scss */
+/* line 51, scss/objects/_nav.scss */
 .nav li:last-child {
   margin: 0;
 }
-/* line 57, scss/objects/_nav.scss */
+/* line 58, scss/objects/_nav.scss */
 .nav li ul {
   position: absolute;
   top: 23px;
@@ -834,37 +835,39 @@ td {
   padding-top: 5px;
   padding-bottom: 5px;
   background: #302d2f;
+  left: -6px;
 }
-/* line 66, scss/objects/_nav.scss */
+/* line 68, scss/objects/_nav.scss */
 .nav li ul li {
   display: block;
   height: 25px;
   background: none;
   margin: 0;
 }
-/* line 73, scss/objects/_nav.scss */
+/* line 75, scss/objects/_nav.scss */
 .nav li ul li a {
   font-family: "museo-slab", "Vitesse", Georgia, Times, "Times New Roman", serif;
   font-size: .9em;
 }
-/* line 78, scss/objects/_nav.scss */
+/* line 80, scss/objects/_nav.scss */
 .nav li ul li:after {
   content: '';
   display: none;
 }
 @media all and (max-width: 375px) {
-  /* line 57, scss/objects/_nav.scss */
+  /* line 58, scss/objects/_nav.scss */
   .nav li ul {
     position: relative;
     top: -9px;
     display: block;
+    left: 0;
   }
 }
-/* line 93, scss/objects/_nav.scss */
+/* line 96, scss/objects/_nav.scss */
 .nav li:hover ul {
   display: block;
 }
-/* line 97, scss/objects/_nav.scss */
+/* line 100, scss/objects/_nav.scss */
 .nav li:after {
   content: '\2022';
   padding: 0 10px;
@@ -875,12 +878,12 @@ td {
   font-size: .8em;
 }
 @media all and (max-width: 550px) {
-  /* line 97, scss/objects/_nav.scss */
+  /* line 100, scss/objects/_nav.scss */
   .nav li:after {
     padding: 0 5px;
   }
 }
-/* line 112, scss/objects/_nav.scss */
+/* line 115, scss/objects/_nav.scss */
 .nav li:last-child:after {
   content: '';
   display: none;
@@ -891,12 +894,12 @@ td {
     display: block;
     margin: 0 0 0.5rem;
   }
-  /* line 121, scss/objects/_nav.scss */
+  /* line 124, scss/objects/_nav.scss */
   .nav li:after {
     display: none;
   }
 }
-/* line 128, scss/objects/_nav.scss */
+/* line 131, scss/objects/_nav.scss */
 .nav a {
   padding: 0 10px;
   font-family: "nimbus-sans-extended", "Turnpike", "Arial", sans-serif;
@@ -906,35 +909,35 @@ td {
   text-transform: uppercase;
   letter-spacing: .03em;
 }
-/* line 137, scss/objects/_nav.scss */
+/* line 140, scss/objects/_nav.scss */
 .nav a:hover, .nav a:focus {
   color: #f5f3e9;
 }
 @media all and (max-width: 550px) {
-  /* line 128, scss/objects/_nav.scss */
+  /* line 131, scss/objects/_nav.scss */
   .nav a {
     padding: 0 5px;
   }
 }
-/* line 147, scss/objects/_nav.scss */
+/* line 150, scss/objects/_nav.scss */
 .nav.active {
   max-height: 40em;
 }
 
-/* line 154, scss/objects/_nav.scss */
+/* line 157, scss/objects/_nav.scss */
 .pagination {
   overflow: hidden;
 }
-/* line 157, scss/objects/_nav.scss */
+/* line 160, scss/objects/_nav.scss */
 .pagination li {
   float: left;
   border-right: 1px solid #eeeeee;
 }
-/* line 161, scss/objects/_nav.scss */
+/* line 164, scss/objects/_nav.scss */
 .pagination li:last-child {
   border: 0;
 }
-/* line 166, scss/objects/_nav.scss */
+/* line 169, scss/objects/_nav.scss */
 .pagination a {
   padding: 20px;
 }
@@ -1137,6 +1140,7 @@ td {
   position: absolute;
   z-index: -1;
   left: 0;
+  top: 0;
 }
 @media all and (max-width: 375px) {
   /* line 39, scss/objects/_text.scss */
@@ -1146,64 +1150,64 @@ td {
   }
 }
 
-/* line 61, scss/objects/_text.scss */
+/* line 62, scss/objects/_text.scss */
 .intro {
   font-size: 1.125em;
   color: #f5f3e9;
   margin: 4rem 0;
 }
 
-/* line 68, scss/objects/_text.scss */
+/* line 69, scss/objects/_text.scss */
 .pullquote {
   font-family: "alternate-gothic-no-1-d", "Tungsten", "Impact", sans-serif;
   font-size: 1.4375em;
 }
 
-/* line 74, scss/objects/_text.scss */
+/* line 75, scss/objects/_text.scss */
 .text {
   padding: 20px;
 }
 @media all and (min-width: 375px) {
-  /* line 74, scss/objects/_text.scss */
+  /* line 75, scss/objects/_text.scss */
   .text {
     padding: 40px;
   }
 }
 @media all and (min-width: 550px) {
-  /* line 74, scss/objects/_text.scss */
+  /* line 75, scss/objects/_text.scss */
   .text {
     padding: 9% 10% 7%;
   }
 }
-/* line 85, scss/objects/_text.scss */
+/* line 86, scss/objects/_text.scss */
 .text a {
   text-decoration: none;
   color: #abbac4;
 }
-/* line 89, scss/objects/_text.scss */
+/* line 90, scss/objects/_text.scss */
 .text a:hover, .text a:focus {
   color: #a54d35;
 }
-/* line 94, scss/objects/_text.scss */
+/* line 95, scss/objects/_text.scss */
 .text ul {
   list-style: disc;
   margin: 0 0 1rem 1.2em;
 }
-/* line 98, scss/objects/_text.scss */
+/* line 99, scss/objects/_text.scss */
 .text ul ul {
   margin-bottom: 0;
 }
-/* line 103, scss/objects/_text.scss */
+/* line 104, scss/objects/_text.scss */
 .text ol {
   list-style: decimal;
   margin: 0 0 1rem 1.2em;
 }
-/* line 107, scss/objects/_text.scss */
+/* line 108, scss/objects/_text.scss */
 .text ol ol {
   margin-bottom: 0;
 }
 
-/* line 113, scss/objects/_text.scss */
+/* line 114, scss/objects/_text.scss */
 .fineprint {
   font-size: 0.8125em;
   color: #7f6f66;
@@ -1211,7 +1215,7 @@ td {
   padding-left: 2%;
 }
 @media all and (max-width: 375px) {
-  /* line 113, scss/objects/_text.scss */
+  /* line 114, scss/objects/_text.scss */
   .fineprint {
     width: 100%;
     margin-left: 0;
@@ -1220,7 +1224,7 @@ td {
 }
 
 /* Review Grade Tile */
-/* line 126, scss/objects/_text.scss */
+/* line 127, scss/objects/_text.scss */
 .grade {
   display: block;
   font-weight: bold;
@@ -1232,7 +1236,7 @@ td {
 }
 
 /* Eyebrow */
-/* line 137, scss/objects/_text.scss */
+/* line 138, scss/objects/_text.scss */
 .eyebrow {
   background: #333333;
   color: white;
@@ -1241,16 +1245,16 @@ td {
   margin-bottom: 0.5rem;
 }
 
-/* line 145, scss/objects/_text.scss */
+/* line 146, scss/objects/_text.scss */
 .eyebrow-image {
   position: relative;
 }
-/* line 148, scss/objects/_text.scss */
+/* line 149, scss/objects/_text.scss */
 .eyebrow-image img {
   position: relative;
   z-index: 0;
 }
-/* line 153, scss/objects/_text.scss */
+/* line 154, scss/objects/_text.scss */
 .eyebrow-image .eyebrow {
   position: absolute;
   top: 0;

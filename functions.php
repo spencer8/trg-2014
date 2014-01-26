@@ -31,7 +31,7 @@ add_action( 'after_setup_theme', 'teameight_setup' );
 function teameight_scripts_styles() {
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css', array(), '2013-12-02' );
+	wp_enqueue_style( 'teameight-style', get_template_directory_uri() . '/css/style.css?v=1', array(), '2013-12-02' );
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'teameight-ie', get_template_directory_uri() . '/css/ie.css', array( 'teameight-style' ), '2013-07-18' );

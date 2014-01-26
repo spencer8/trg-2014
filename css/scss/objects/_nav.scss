@@ -36,6 +36,7 @@
 		background: $drk-brwn;
 		z-index:10;
 		margin-right: -.25em;
+		position:relative;
 		
 		a {
 			display:inline-block;
@@ -62,6 +63,7 @@
 			padding-top:5px;
 			padding-bottom:5px;
 			background:$drk-brwn-2;
+			left: -6px;
 
 			li {
 
@@ -86,6 +88,7 @@
 				position: relative;
 				top: -9px;
 				display:block;
+				left:0;
 			}
 
 		}
