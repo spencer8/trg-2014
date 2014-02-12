@@ -63,18 +63,20 @@
 			padding-top:5px;
 			padding-bottom:5px;
 			background:$drk-brwn-2;
-			left: -6px;
+			left: -12px;
+			width: 110px;
 
 			li {
 
 				display:block;
-				height:25px;
 				background:none;
 				margin:0;
 
 				a {
 					font-family: $font;
 					font-size:.9em;
+					height:auto;
+					padding:.25em 0;
 				}
 
 				&:after{

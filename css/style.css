@@ -835,12 +835,12 @@ td {
   padding-top: 5px;
   padding-bottom: 5px;
   background: #302d2f;
-  left: -6px;
+  left: -12px;
+  width: 110px;
 }
-/* line 68, scss/objects/_nav.scss */
+/* line 69, scss/objects/_nav.scss */
 .nav li ul li {
   display: block;
-  height: 25px;
   background: none;
   margin: 0;
 }
@@ -848,8 +848,10 @@ td {
 .nav li ul li a {
   font-family: "museo-slab", "Vitesse", Georgia, Times, "Times New Roman", serif;
   font-size: .9em;
+  height: auto;
+  padding: .25em 0;
 }
-/* line 80, scss/objects/_nav.scss */
+/* line 82, scss/objects/_nav.scss */
 .nav li ul li:after {
   content: '';
   display: none;
@@ -863,11 +865,11 @@ td {
     left: 0;
   }
 }
-/* line 96, scss/objects/_nav.scss */
+/* line 98, scss/objects/_nav.scss */
 .nav li:hover ul {
   display: block;
 }
-/* line 100, scss/objects/_nav.scss */
+/* line 102, scss/objects/_nav.scss */
 .nav li:after {
   content: '\2022';
   padding: 0 10px;
@@ -878,12 +880,12 @@ td {
   font-size: .8em;
 }
 @media all and (max-width: 550px) {
-  /* line 100, scss/objects/_nav.scss */
+  /* line 102, scss/objects/_nav.scss */
   .nav li:after {
     padding: 0 5px;
   }
 }
-/* line 115, scss/objects/_nav.scss */
+/* line 117, scss/objects/_nav.scss */
 .nav li:last-child:after {
   content: '';
   display: none;
@@ -894,12 +896,12 @@ td {
     display: block;
     margin: 0 0 0.5rem;
   }
-  /* line 124, scss/objects/_nav.scss */
+  /* line 126, scss/objects/_nav.scss */
   .nav li:after {
     display: none;
   }
 }
-/* line 131, scss/objects/_nav.scss */
+/* line 133, scss/objects/_nav.scss */
 .nav a {
   padding: 0 10px;
   font-family: "nimbus-sans-extended", "Turnpike", "Arial", sans-serif;
@@ -909,35 +911,35 @@ td {
   text-transform: uppercase;
   letter-spacing: .03em;
 }
-/* line 140, scss/objects/_nav.scss */
+/* line 142, scss/objects/_nav.scss */
 .nav a:hover, .nav a:focus {
   color: #f5f3e9;
 }
 @media all and (max-width: 550px) {
-  /* line 131, scss/objects/_nav.scss */
+  /* line 133, scss/objects/_nav.scss */
   .nav a {
     padding: 0 5px;
   }
 }
-/* line 150, scss/objects/_nav.scss */
+/* line 152, scss/objects/_nav.scss */
 .nav.active {
   max-height: 40em;
 }
 
-/* line 157, scss/objects/_nav.scss */
+/* line 159, scss/objects/_nav.scss */
 .pagination {
   overflow: hidden;
 }
-/* line 160, scss/objects/_nav.scss */
+/* line 162, scss/objects/_nav.scss */
 .pagination li {
   float: left;
   border-right: 1px solid #eeeeee;
 }
-/* line 164, scss/objects/_nav.scss */
+/* line 166, scss/objects/_nav.scss */
 .pagination li:last-child {
   border: 0;
 }
-/* line 169, scss/objects/_nav.scss */
+/* line 171, scss/objects/_nav.scss */
 .pagination a {
   padding: 20px;
 }
