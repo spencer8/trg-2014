@@ -44,6 +44,10 @@ get_header(); ?>
 	
 	<?php } ?>
 	
+	<?php if( get_field('open_table_script') ): ?>
+		<div id="open-table"><?php the_field('open_table_script'); ?></div>
+	<?php endif; ?>
+	
 	<?php endwhile; ?>
 
 <?php get_footer(); ?>

@@ -1,56 +1,3 @@
-/*                                                                                                                                         
-                                                ,,            ,,                          ,,                                             
- .M"""bgd mm                                    db          `7MM        mm         mm   `7MM                                    OO OO OO 
-,MI    "Y MM                                                  MM        MM         MM     MM                                    88 88 88 
-`MMb.   mmMMmm ,pW"Wq.`7MMpdMAo.     `7Mb,od8 `7MM  .P"Ybmmm  MMpMMMb.mmMMmm     mmMMmm   MMpMMMb.  .gP"Ya `7Mb,od8 .gP"Ya      || || || 
-  `YMMNq. MM  6W'   `Wb MM   `Wb       MM' "'   MM :MI  I8    MM    MM  MM         MM     MM    MM ,M'   Yb  MM' "',M'   Yb     || || || 
-.     `MM MM  8M     M8 MM    M8       MM       MM  WmmmP"    MM    MM  MM         MM     MM    MM 8M""""""  MM    8M""""""     `' `' `' 
-Mb     dM MM  YA.   ,A9 MM   ,AP       MM       MM 8M         MM    MM  MM         MM     MM    MM YM.    ,  MM    YM.    ,     ,, ,, ,, 
-P"Ybmmd"  `Mbmo`Ybmd9'  MMbmmd'      .JMML.   .JMML.YMMMMMb .JMML  JMML.`Mbmo      `Mbmo.JMML  JMML.`Mbmmd'.JMML.   `Mbmmd'     db db db 
-                        MM                         6'     dP                                                                             
-                      .JMML.                       Ybmmmd'                                                                               
-
-Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
-You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
-So please don't use these styles. They're just here to put together the demo, and nothing more.
-They're intentionally gray, boring, and crappy because you're supposed to do this stuff yourself.
-
-Atomic design is philosophically complimentary with these CSS approaches:
-
-* SMACSS by Jonathan Snook http://smacss.com/
-* OOCSS by Nicole Sullivan http://oocss.org/
-* BEM CSS Methology : http://bem.info/method/
-* CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
-
-So feel free to use any of these approaches. Or don't. It's totally up to you.
-
-*/
-/*------------------------------------*\
-    $TABLE OF CONTENTS 
-    based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
-\*------------------------------------*/
-/**
- * VARIABLES..............................Declarations of Sass variables 
- * .....Colors
- * .....Typography
- * .....Layout
- * .....Defaults
- * .....Breakpoints
- * MIXINS.................................Sass mixins 
- * RESET..................................Set reset defaults
- * GLOBAL CLASSES.........................Set reset defaults
- * GLOBAL ELEMENTS........................Establish global styles
- * .....Main
- * .....Headings
- * .....Text-related elements (p, blockquote, lists)
- * .....Defaults
- * .....Breakpoints
- * TYPOGRAPHY------------------------------
- * MEDIA------------------------------
- * LAYOUT------------------------------
- * NAVIGATION------------------------------
- * TOC To Be Continued
- */
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
@@ -640,6 +587,76 @@ input[type="search"]::-webkit-search-decoration {
   border: 0;
   border-left: 1px solid gray;
   color: gray;
+}
+
+/* line 160, scss/base/_forms.scss */
+#open-table {
+  width: 100%;
+}
+/* line 164, scss/base/_forms.scss */
+#open-table #OT_form, #open-table .OT_wrapper, #open-table .OT_list {
+  width: 100%;
+  height: auto;
+}
+/* line 169, scss/base/_forms.scss */
+#open-table .OT_header, #open-table .OT_title, #open-table .OT_subtitle {
+  width: auto;
+  float: none;
+}
+/* line 174, scss/base/_forms.scss */
+#open-table .OT_header {
+  border-bottom: 1px solid #211e21;
+  padding-bottom: 10px;
+}
+/* line 179, scss/base/_forms.scss */
+#open-table .OT_wrapper {
+  padding: 10px 0;
+  background-color: #d3ccbe;
+  border: 0;
+}
+/* line 185, scss/base/_forms.scss */
+#open-table .OT_list {
+  margin: 0;
+}
+/* line 189, scss/base/_forms.scss */
+#open-table .OT_day, #open-table .OT_time, #open-table .OT_party, #open-table .OT_submit {
+  padding: 10px 10px 9px 40px;
+  border: 0;
+  height: auto;
+  width: 48%;
+  margin-left: 6px;
+}
+/* line 196, scss/base/_forms.scss */
+#open-table .OT_searchTimeField, #open-table .OT_searchDateField, #open-table .OT_searchPartyField {
+  width: 100%;
+}
+/* line 199, scss/base/_forms.scss */
+#open-table .OT_time, #open-table .OT_submit {
+  float: right;
+}
+/* line 203, scss/base/_forms.scss */
+#open-table #OTButton {
+  float: right;
+}
+/* line 207, scss/base/_forms.scss */
+#open-table a.OT_Find_a_Table:link, #open-table a.OT_Find_a_Table:visited, #open-table a.OT_Find_a_Table:hover, #open-table a.OT_Find_a_Table:active {
+  background-image: none;
+  color: #FFFFFF;
+  background-color: #871F03;
+  border-radius: 7px;
+  padding-top: 2px;
+}
+/* line 215, scss/base/_forms.scss */
+#open-table a.OT_Find_a_Table:hover {
+  background-color: #591300;
+}
+/* line 219, scss/base/_forms.scss */
+#open-table .OT_ExtLink:link, #open-table .OT_ExtLink:visited, #open-table .OT_ExtLink:hover, #open-table .OT_ExtLink:active {
+  color: #7f6f66;
+  font-family: "museo-slab", "Vitesse", Georgia, Times, "Times New Roman", serif;
+  text-align: right;
+  display: block;
+  width: 100%;
 }
 
 /*------------------------------------*\
